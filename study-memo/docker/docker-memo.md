@@ -9,6 +9,21 @@
 	* docker create	: コンテナの作成
 	* docker start	: コンテナの起動
 
+### ポートフォワーディング
+* docker run -p ホストのポート:コンテナのポート イメージ名
+
+	例えばnginxなどで使う
+	`docker run -p 8080:80 nginx
+
+### dettachedモードで起動する
+* docker run -d イメージ名
+
+	nginxのようにコンテナ上で常に動作し続けるプログラムの場合は-dでdettachedモードで起動したほうが良い
+
+
+### 仮想マシンのIPアドレスを調べる（Docker Toolbox）
+* docker-machine ip default`
+
 ### コンテナ内で呼び出すコマンドを指定して起動する
 * docker run イメージ名 コマンド
 
