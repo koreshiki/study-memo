@@ -13,7 +13,7 @@
 * docker run -p ホストのポート:コンテナのポート イメージ名
 
 	例えばnginxなどで使う
-	`docker run -p 8080:80 nginx
+	`docker run -p 8080:80 nginx`
 
 ### dettachedモードで起動する
 * docker run -d イメージ名
@@ -43,6 +43,7 @@
 * docker rmi IMAGE_ID
 
 	イメージを使用したコンテナが存在する場合は先にコンテナを削除する必要がある
+	
 	もしくは-fフラグで強制的に削除することもできる
 
 ### コンテナを表示する
