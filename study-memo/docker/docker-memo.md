@@ -22,7 +22,7 @@
 
 
 ### 仮想マシンのIPアドレスを調べる（Docker Toolbox）
-* docker-machine ip default`
+* docker-machine ip default
 
 ### コンテナ内で呼び出すコマンドを指定して起動する
 * docker run イメージ名 コマンド
