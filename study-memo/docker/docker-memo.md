@@ -9,11 +9,29 @@
 	* docker create	: コンテナの作成
 	* docker start	: コンテナの起動
 
+### コンテナに入る
+
+* docker exec -i t コンテナID/コンテナ名 bash
+* docker attach  コンテナID/コンテナ名
+
+docker attachはPID 1で動作するためexitするとそのコンテナも終了してしまう
+
+これを避けるためにはCtrl+p+qでコンテナを抜ければよい
+
+### コンテナ上のファイルをローカルに持ってくる
+
+* docker cp コンテナID:<コンテナ上のパス> <ローカルのパス>（逆すなわちローカルからコンテナにコピーすることも可能）
+
+  ※Docker for Windowsの場合は、管理者としてPower shellを実行すること
+
+
+
 ### ポートフォワーディング
+
 * docker run -p ホストのポート:コンテナのポート イメージ名
 
 	例えばnginxなどで使う
-	`docker run -p 8080:80 nginx
+	docker run -p 8080:80 nginx
 
 ### dettachedモードで起動する
 * docker run -d イメージ名
