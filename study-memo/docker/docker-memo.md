@@ -31,7 +31,11 @@ docker attachはPID 1で動作するためexitするとそのコンテナも終�
 * docker run -p ホストのポート:コンテナのポート イメージ名
 
 	例えばnginxなどで使う
+<<<<<<< HEAD
 	docker run -p 8080:80 nginx
+=======
+	`docker run -p 8080:80 nginx`
+>>>>>>> origin/master
 
 ### dettachedモードで起動する
 * docker run -d イメージ名
@@ -40,7 +44,7 @@ docker attachはPID 1で動作するためexitするとそのコンテナも終�
 
 
 ### 仮想マシンのIPアドレスを調べる（Docker Toolbox）
-* docker-machine ip default`
+* docker-machine ip default
 
 ### コンテナ内で呼び出すコマンドを指定して起動する
 * docker run イメージ名 コマンド
@@ -61,6 +65,7 @@ docker attachはPID 1で動作するためexitするとそのコンテナも終�
 * docker rmi IMAGE_ID
 
 	イメージを使用したコンテナが存在する場合は先にコンテナを削除する必要がある
+	
 	もしくは-fフラグで強制的に削除することもできる
 
 ### コンテナを表示する
