@@ -46,8 +46,30 @@ nginxのようにコンテナ上で常に動作し続けるプログラムの場
 
 ### 仮想マシンのIPアドレスを調べる（Docker Toolbox）
 * docker-machine ip default
+* docker-machine ip <Dockerホスト名>
+
+### ネットワークの一覧を表示する
+
+* docker network ls
+
+### ネットワークの詳細を表示する
+
+* docker network inspect <ネットワーク名>
+
+### ユーザ定義のブリッジネットワークを作成する
+
+* docker network create <ネットワーク名>
+
+### 作成したネットワークにコンテナを接続する
+
+* docker network connect <ネットワーク名> <コンテナ名>
+
+### ネットワークを切断する
+
+* docker network disconnect <ネットワーク名> <コンテナ名>
 
 ### コンテナ内で呼び出すコマンドを指定して起動する
+
 * docker run イメージ名 コマンド
 
 ### ダウンロード済みのイメージ一覧を取得する
@@ -93,6 +115,30 @@ MySQLなど起動したときのIPを確認できる
 	--fileフラグで任意のファイルを指定することができる
 
 	**ビルドコンテキスト上に存在しないファイルはDockerイメージに取り込むことができない**
+
+## Docker Machine
+
+### Dockerホストを確認する
+
+* docker-machine ls
+
+現在ActiveとなっているホストはACTIVE列に\*が表示される
+
+### Dockerホストを作成する
+
+* docker-machine create <ホスト名>
+
+### Dockerホストの環境変数を確認する
+
+* docker-machine env <ホスト名>
+
+最後の行に表示されるevalコマンドを実行するとそのホストをActiveにすることができる
+
+### ActiveになっているDockerホストをNonActiveにする
+
+* docker-machine env --unset
+
+正確にはこのコマンド実行後に最後の行に表示されるenvコマンドを実行する
 
 ## Docker Hub関連
 
